@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<img src="../media/{{image}}">
+
+<form action="{% url 'crop' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" name="submit">
+	crop
+</button>
+<input type='text' name='upper_left'>
+<input type='text' name='lower_left'>
+<input type='text' name='upper_right'>
+<input type='text' name='lower_right'>
+</form>
+
+
+<form action="{% url 'resize' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" name="submit">
+	resize
+</button>
+<input type='text' name='width'>
+<input type='text' name='height'>
+</form>
+
+
+<form action="{% url 'rotate' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" name="submit">
+	rotate
+</button>
+<input type='text' name='degree'>
+</form>
+
+<form action="{% url 'black_white' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" name="submit">
+	black_white
+</button>
+</form>
+
+<form action="{% url 'share' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" name="submit">
+	share
+</button>
+</form>
+
+
+<form action="{% url 'new_photo' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<button type="submit" name="submit">
+	new photo
+</button>
+</form>
+
+
+</body>
+</html>
