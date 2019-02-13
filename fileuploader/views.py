@@ -24,7 +24,10 @@ def new_photo(request):
 
 
 def share(request):
-	return redirect("/")
+	path = settings.MEDIA_ROOT
+	edited_photos = os.listdir(path)
+	context = {'edited_photos' : edited_photos}
+	return render(request, 'fileuploader/share.html', context)
 
 
 def crop(request):
